@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jogo Herói vs Vilão</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="battleField">
+            <div class="character hero">
+                <div class="life-bar" :style="lifeBarStyle(hero)">{{ hero.life }}</div>
+                <img :src="hero.gif" class="sprite" />
+                <h1><i>{{ hero.name }}</i></h1>
+                <div class="actions">
+                    <button @click="attack(true)" :disabled="gameOver">Atacar</button>
+                    <button @click="defend(true)" :disabled="gameOver">Defender</button>
+                    <button @click="usePotion(true)" :disabled="gameOver">Usar Poção</button>
+                    <button @click="flee(true)" :disabled="gameOver">Correr</button>
+                </div>
+            </div>
+            <div class="buttonContainer">
+                <button @click="changeCharacter()" :disabled="gameOver">Trocar Personagens</button>
+                <button @click="resetGame()">Reiniciar</button>
+                <div v-if="gameOver" class="game-over-message">
+                    <h2>{{ gameMessage }}</h2>
+                </div>
+            </div>
+            <div class="character villain">
+                <div class="life-bar" :style="lifeBarStyle(villain)">{{ villain.life }}</div>
+                <img :src="villain.gif" class="sprite" />
+                <h1><i>{{ villain.name }}</i></h1>
+                <div class="villainChose" v-if="villainChose">{{ villainChose }}</div>
+            </div>
+        </div>
+    </div>
+    <audio id="attackSound" src="assets/bb2-02.mp3"></audio>
+    <audio id="defenseSound" src="assets/bb8-01.mp3"></audio>
+    <audio id="fleeSound" src="assets/bb8-22.mp3"></audio>
+    <audio id="potionSound" src="assets/bb-8-potion.mp3"></audio>
+    <audio id="attackSoundR2" src="assets/r2-d2-attack.mp3"></audio>
+    <audio id="defenseSoundR2" src="assets/r2-d2-defense2.mp3"></audio>
+    <audio id="potionSoundR2" src="assets/r2-d2-potion1.mp3"></audio>
+    <audio id="fleeSoundR2" src="assets/r2-d2-flee.mp3"></audio>
+    <script src="index.js"></script>
+</body>
+</html>

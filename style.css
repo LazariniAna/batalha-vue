@@ -1,0 +1,150 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #deecf2;
+    font-family: 'Arial', sans-serif;
+}
+
+#app {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.battleField {
+    display: flex;
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+
+.character {
+    border: 2px solid #1d509f;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    height: 400px;
+    width: 200px;
+    background-color: #fff;
+    transition: transform 0.2s;
+}
+
+.character:hover {
+    transform: scale(1.05);
+}
+.character.villain:hover {
+    transform: scale(1);
+}
+
+.actions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+}
+
+button {
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #1d509f;
+    color: whitesmoke;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background-color: #1a355e;
+}
+
+button:active {
+    transform: translateY(2px);
+}
+
+.life-bar {
+    height: 30px;
+    background-color: #32450a;
+    color: #9ce39e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.sprite {
+    height: 120px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.buttonContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 10px 25px;
+}
+.buttonContainer button{
+    margin: 10px 25px;
+    background: linear-gradient(45deg, #9f581d, #db9a55); 
+}
+.buttonContainer button:hover {
+    background: linear-gradient(45deg, #db9a55, #9f581d); 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.game-over-message {
+    color: green;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.villainChose {
+    padding: 12px 20px; 
+    border: none;
+    border-radius: 25px; 
+    background: linear-gradient(45deg, #9f1d1d, #db6955); 
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.3s; 
+    font-weight: bold;
+    font-size: 1em; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+button {
+    padding: 12px 20px; 
+    border: none;
+    border-radius: 25px; 
+    background: linear-gradient(45deg, #1d509f, #3a8fd5); 
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.3s; 
+    font-weight: bold;
+    font-size: 1em; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background: linear-gradient(45deg, #3a8fd5, #1d509f); 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+button:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
